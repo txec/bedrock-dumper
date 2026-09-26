@@ -1,0 +1,17 @@
+{
+    "_metadata": {
+        "project": "bedrock-dumper",
+        "version": "1.0",
+        "timestamp": "2026-09-26 17:51:15 UTC",
+        "total_offsets": 1
+    },
+    "offsets": {
+        "ClientInstance": {
+            "Update": {
+                "rva": "0xD44840",
+                "decimal": 13912128,
+                "comment": "xref to textures/ui/pointer"
+            }
+        }
+    }
+}

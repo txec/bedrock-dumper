@@ -1,0 +1,8 @@
+build/
+bin/
+out/
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.log
