@@ -27,6 +27,8 @@ namespace process {
         static auto read_string(uintptr_t address, size_t max_length = 256) -> std::optional<std::string>;
         static auto scan_string(const std::string& target, std::string_view section = ".rdata")
             -> std::vector<uintptr_t>;
+        static auto scan_pointer(uintptr_t target, std::string_view section = ".rdata")
+            -> std::vector<uintptr_t>;
         static auto scan_pattern(std::string_view ida_pattern, std::string_view section = ".text")
             -> std::vector<uintptr_t>;
     };

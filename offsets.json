@@ -2,8 +2,8 @@
     "_metadata": {
         "project": "bedrock-dumper",
         "version": "1.0",
-        "timestamp": "2026-09-26 17:51:15 UTC",
-        "total_offsets": 1
+        "timestamp": "2026-09-26 18:27:16 UTC",
+        "total_offsets": 2
     },
     "offsets": {
         "ClientInstance": {
@@ -11,6 +11,11 @@
                 "rva": "0xD44840",
                 "decimal": 13912128,
                 "comment": "xref to textures/ui/pointer"
+            },
+            "GetLocalPlayer": {
+                "rva": "0xD4BE50",
+                "decimal": 13942352,
+                "comment": "vtable slot from update"
             }
         }
     }

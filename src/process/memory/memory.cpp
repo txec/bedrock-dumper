@@ -63,6 +63,31 @@ namespace process {
         return matches;
     }
 
+    auto Memory::scan_pointer(uintptr_t target, std::string_view section)
+        -> std::vector<uintptr_t> {
+        std::vector<uintptr_t> matches;
+        auto sec = g_process.get_section(section);
+        if (!sec) {
+            return matches;
+        }
+
+        auto buffer = read_bytes(sec->first, sec->second);
+        if (buffer.size() < sizeof(uintptr_t)) {
+            return matches;
+        }
+
+        const size_t max_offset = buffer.size() - sizeof(uintptr_t);
+        for (size_t offset = 0; offset <= max_offset; offset += sizeof(uintptr_t)) {
+            uintptr_t val = 0;
+            std::memcpy(&val, buffer.data() + offset, sizeof(uintptr_t));
+            if (val == target) {
+                matches.push_back(sec->first + offset);
+            }
+        }
+
+        return matches;
+    }
+
     struct PatternByte {
         uint8_t value{0};
         bool is_wildcard{false};
